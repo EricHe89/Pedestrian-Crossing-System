@@ -47,8 +47,8 @@ main:
 	bl printf
 
 	ldr r0, =delayIn
-    ldr r0, [r0]
-    bl delay
+   	ldr r0, [r0]
+    	bl delay
 	
 	// let's populate our array a of 100 bytes (25 words - 4 bytes to a word)
 	ldr r1, =a 	// r1 points to beginning of array - think of this in C++ as a[0]
@@ -92,8 +92,8 @@ oa_loop:
 	bl printf
 
 	ldr r0, =delayMs
-    ldr r0, [r0]
-    bl  delay	
+    	ldr r0, [r0]
+    	bl  delay	
 
 	//pop {r0-r3}	// Restore state of registers R0-R3 after printf call
 	sub r4, #1	// increment our index by 1										
@@ -118,10 +118,10 @@ init:
         mov     r1, #OUTPUT
         bl      pinMode
 
-		ldr	r0, =pin2
-		ldr	r0, [r0]
-		mov	r1, #OUTPUT
-		bl	pinMode
+	ldr	r0, =pin2
+	ldr	r0, [r0]
+	mov	r1, #OUTPUT
+	bl	pinMode
 
         ldr     r4, =i
         ldr     r4, [r4]
@@ -136,10 +136,10 @@ forLoop:
         mov     r1, #1
         bl      digitalWrite
 
-		ldr	r0, =pin2
-		ldr	r0, [r0]
-		mov	r1, #1
-		bl	digitalWrite
+	ldr	r0, =pin2
+	ldr	r0, [r0]
+	mov	r1, #1
+	bl	digitalWrite
 
         
         ldr     r0, =delayMs
@@ -152,10 +152,10 @@ forLoop:
         bl      digitalWrite
 
 
-		ldr	r0, =pin2
-		ldr	r0, [r0]
-		mov	r1, #0
-		bl	digitalWrite
+	ldr	r0, =pin2
+	ldr	r0, [r0]
+	mov	r1, #0
+	bl	digitalWrite
 
 
         ldr     r0, =delayMs
@@ -167,4 +167,4 @@ forLoop:
         
 done:   
         mov r0, #0
-		pop  {r4,r5,ip,pc} 
+	pop  {r4,r5,ip,pc} 
